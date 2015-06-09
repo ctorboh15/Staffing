@@ -8,4 +8,8 @@ private String startDate;
 private String endDate;
 private String email;
 
+    private String login;
+
+    private String password;
+
 }
