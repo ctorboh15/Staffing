@@ -3,8 +3,7 @@
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src\java"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src\test"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src\resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/java"/>
         <property name="context-root" value="Staffing"/>
         <property name="java-output-path" value="/Staffing/build/classes"/>
     </wb-module>
