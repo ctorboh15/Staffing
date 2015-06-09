@@ -11,5 +11,6 @@ private String email;
     private String login;
 
     private String password;
+    // / some comment
 
 }
