@@ -19,6 +19,12 @@ public abstract class personnel
 
     protected String password;
 
+    public personnel(String first, String last, String start) {
+
+        this.startDate = start;
+        this.firstName = first;
+        this.lastName = last;
+    }
 
     @Override
     public int hashCode() throws NullPointerException {

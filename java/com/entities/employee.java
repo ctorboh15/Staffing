@@ -8,10 +8,16 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Employee")
-public class employee extends personnel {
+public class employee
+    extends personnel {
 
     private boolean isManager;
 
+    public employee(String first, String last, String start) {
+
+        super(first, last, start);
+
+    }
 
     @Id
     @GeneratedValue
@@ -28,7 +34,7 @@ public class employee extends personnel {
     public String getFirstName() {
 
         // TODO Auto-generated method stub
-        return null;
+        return this.firstName;
     }
 
     @Column(name = "lastName")
@@ -36,7 +42,7 @@ public class employee extends personnel {
     public String getLastName() {
 
         // TODO Auto-generated method stub
-        return null;
+        return this.lastName;
     }
 
     @Column(name = "startDate")
@@ -44,7 +50,7 @@ public class employee extends personnel {
     public String getStartDate() {
 
         // TODO Auto-generated method stub
-        return null;
+        return this.startDate;
     }
 
     @Column(name = "endDate")
@@ -52,7 +58,7 @@ public class employee extends personnel {
     public String getEndDate() {
 
         // TODO Auto-generated method stub
-        return null;
+        return this.endDate;
     }
 
     @Column(name = "email")
@@ -60,7 +66,7 @@ public class employee extends personnel {
     public String getEmail() {
 
         // TODO Auto-generated method stub
-        return null;
+        return this.email;
     }
 
     @Column(name = "login")
@@ -79,8 +85,15 @@ public class employee extends personnel {
         return null;
     }
 
-    @Override
+    @Column(name = "isManager")
     public void setMangerStatus() {
+
+        isManager = true;
+    }
+
+    public boolean getManagerStatus() {
+
+        return isManager;
 
     }
 
