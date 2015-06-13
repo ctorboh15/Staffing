@@ -74,7 +74,7 @@ public class employee
     public String getLogin() {
 
         // TODO Auto-generated method stub
-        return null;
+        return this.login;
     }
 
     @Column(name = "password")
@@ -82,7 +82,7 @@ public class employee
     public String getPassword() {
 
         // TODO Auto-generated method stub
-        return null;
+        return this.password;
     }
 
     @Column(name = "isManager")
