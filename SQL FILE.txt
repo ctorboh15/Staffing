@@ -1,0 +1,22 @@
+Create DATABASE Personnel;
+
+use Personnel;
+Create Table Contractors (
+ID int(8) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+firstName NVARCHAR(20) NOT NULL,
+lastName NVARCHAR(20) NOT NULL,
+startDate DATE,
+endDate DATE, 
+email NVARCHAR(25) NOT NULL,
+login NVARCHAR(25) NOT NULL
+);
+
+Create Table Employees (
+ID int(8) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+firstName NVARCHAR(20) NOT NULL,
+lastName NVARCHAR(20) NOT NULL,
+startDate DATE,
+endDate DATE, 
+email NVARCHAR(25) NOT NULL,
+login NVARCHAR(25) NOT NULL
+);
