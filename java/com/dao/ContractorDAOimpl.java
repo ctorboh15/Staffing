@@ -6,6 +6,7 @@ import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import com.entities.contractor;
 import com.entities.personnel;
 
 
@@ -38,14 +39,19 @@ public class ContractorDAOimpl
     public personnel getPersonnel(String login, String password) {
 
         String SQL = "Select * from contractors where login = ? AND password=?";
+        personnel person = jdbcTemplate.queryForObject(SQL, 
+                new Object[]{login,password}, new PersonnelMapper(new contractor()));
+        
+        return person;
 
     }
 
     @Override
     public List<personnel> listAllPersonnel() {
 
-        // TODO Auto-generated method stub
-        return null;
+      String SQL = "Select * from contractors";
+      List<personnel> contractorsList = jdbcTemplate.query(SQL, new PersonnelMapper(new contractor()));
+        return contractorsList;
     }
 
     @Override

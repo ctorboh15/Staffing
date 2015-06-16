@@ -1,5 +1,7 @@
 package com.entities;
 
+import java.sql.Date;
+
 
 // @Entity
 // @Table(name = "Employee")
@@ -8,9 +10,9 @@ public class employee
 
     private boolean isManager;
 
-    public employee(String first, String last, String start) {
+    public employee(String first, String last, String login, String pass) {
 
-        super(first, last, start);
+        super(first, last, login,pass);
 
     }
 
@@ -45,7 +47,7 @@ public class employee
     public String getStartDate() {
 
         // TODO Auto-generated method stub
-        return this.startDate;
+        return this.startDate.toString();
     }
 
     // @Column(name = "endDate")
@@ -53,7 +55,7 @@ public class employee
     public String getEndDate() {
 
         // TODO Auto-generated method stub
-        return this.endDate;
+        return this.endDate.toString();
     }
 
     // @Column(name = "email")

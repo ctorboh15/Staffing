@@ -1,5 +1,7 @@
 package com.entities;
 
+import java.sql.Date;
+
 public abstract class personnel
     implements Comparable<personnel> {
 
@@ -9,9 +11,9 @@ public abstract class personnel
 
     protected String lastName;
 
-    protected String startDate;
+    protected Date startDate;
 
-    protected String endDate;
+    protected Date endDate;
 
     protected String email;
 
@@ -19,14 +21,19 @@ public abstract class personnel
 
     protected String password;
 
-    public personnel(String first, String last, String start) {
+    public personnel(String first, String last, String login, String password) {
 
-        this.startDate = start;
+        this.login = login;
+        this.password = password;
         this.firstName = first;
         this.lastName = last;
     }
 
-    @Override
+    public personnel() {
+		
+	}
+
+	@Override
     public int hashCode() throws NullPointerException {
 
         int hash = 8;
@@ -85,6 +92,38 @@ public abstract class personnel
     public abstract String getLogin();
 
     public abstract String getPassword();
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 
 }

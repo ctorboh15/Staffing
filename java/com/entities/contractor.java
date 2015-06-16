@@ -1,5 +1,7 @@
 package com.entities;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,12 +14,15 @@ import javax.persistence.Table;
 public class contractor extends personnel {
 	
 
-    public contractor(String first, String last, String start) {
+    public contractor(String first, String last, String login, String pass) {
 
-        super(first, last, start);
+        super(first, last, login,pass);
         // TODO Auto-generated constructor stub
     }
-    @Id
+    public contractor() {
+		super();
+	}
+	@Id
     @GeneratedValue
     @Column(name = "ID")
     @Override
@@ -48,7 +53,7 @@ public class contractor extends personnel {
     public String getStartDate() {
 
         // TODO Auto-generated method stub
-        return this.startDate;
+        return this.startDate.toString();
     }
 
     @Column(name = "endDate")
@@ -56,7 +61,7 @@ public class contractor extends personnel {
     public String getEndDate() {
 
         // TODO Auto-generated method stub
-        return this.endDate;
+        return this.endDate.toString();
     }
 
     @Column(name = "email")
