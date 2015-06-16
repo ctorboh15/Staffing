@@ -25,7 +25,7 @@
       <property name="dataSource"  ref="dataSource" />    
    </bean>
    
-   <bean id="emmployeeJDBCTemplate" 
+   <bean id="employeeJDBCTemplate" 
       class="com.dao.EmployeeDAOimpl">
       <property name="dataSource"  ref="dataSource" />    
    </bean>

@@ -4,16 +4,23 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.jdbc.core.JdbcTemplate;
+
 import com.entities.personnel;
 
 
 public class EmployeeDAOimpl
     implements PersonnelDAO {
 
+    private DataSource datasource;
+
+    private JdbcTemplate JdbcTemp;
+
     @Override
     public void setDataSource(DataSource ds) {
 
-        // TODO Auto-generated method stub
+        this.datasource = ds;
+        this.JdbcTemp = new JdbcTemplate(datasource);
 
     }
 
@@ -26,7 +33,7 @@ public class EmployeeDAOimpl
     }
 
     @Override
-    public void getPersonnel(String login) {
+    public personnel getPersonnel(String login, String password) {
 
         // TODO Auto-generated method stub
 

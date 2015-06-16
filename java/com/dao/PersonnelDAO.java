@@ -13,7 +13,7 @@ public interface PersonnelDAO {
     public void createPersonnel(String firstName, String lastName,
                                 String Login, String pw);
 
-    public void getPersonnel(String login);
+    public personnel getPersonnel(String login, String Password);
 
     public List<personnel> listAllPersonnel();
 

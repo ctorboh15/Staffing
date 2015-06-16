@@ -7,8 +7,9 @@ firstName NVARCHAR(20) NOT NULL,
 lastName NVARCHAR(20) NOT NULL,
 startDate DATE,
 endDate DATE, 
-email NVARCHAR(25) NOT NULL,
-login NVARCHAR(25) NOT NULL
+email NVARCHAR(25),
+login NVARCHAR(25) NOT NULL,
+password NVARCHAR(15) NOT NULL
 );
 
 Create Table Employees (
@@ -17,6 +18,7 @@ firstName NVARCHAR(20) NOT NULL,
 lastName NVARCHAR(20) NOT NULL,
 startDate DATE,
 endDate DATE, 
-email NVARCHAR(25) NOT NULL,
-login NVARCHAR(25) NOT NULL
+email NVARCHAR(25),
+login NVARCHAR(25) NOT NULL,
+password NVARCHAR(15) NOT NULL
 );

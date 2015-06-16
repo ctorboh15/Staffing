@@ -4,16 +4,23 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.jdbc.core.JdbcTemplate;
+
 import com.entities.personnel;
 
 
 public class ContractorDAOimpl
     implements PersonnelDAO {
 
+    private DataSource dataSource;
+
+    private JdbcTemplate jdbcTemplate;
+
     @Override
     public void setDataSource(DataSource ds) {
 
-        // TODO Auto-generated method stub
+        this.dataSource = ds;
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
 
     }
 
@@ -21,14 +28,16 @@ public class ContractorDAOimpl
     public void createPersonnel(String firstName, String lastName,
                                 String Login, String pw) {
 
-        // TODO Auto-generated method stub
+        String SQL =
+            "Insert into contractors (firstName, lastName, login,password) values (?,?,?,?)";
+        jdbcTemplate.update(SQL, firstName, lastName, Login, pw);
 
     }
 
     @Override
-    public void getPersonnel(String login) {
+    public personnel getPersonnel(String login, String password) {
 
-        // TODO Auto-generated method stub
+        String SQL = "Select * from contractors where login = ? AND password=?";
 
     }
 
