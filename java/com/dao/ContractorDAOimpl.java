@@ -36,11 +36,12 @@ public class ContractorDAOimpl
     }
 
     @Override
-    public personnel getPersonnel(String login, String password) {
+    public personnel getPersonnel(Long id) {
 
-        String SQL = "Select * from contractors where login = ? AND password=?";
+        String SQL = "Select * from contractors where ID = ?";
         personnel person = jdbcTemplate.queryForObject(SQL, 
-                new Object[]{login,password}, new PersonnelMapper(new contractor()));
+ new Object[] {id},
+                new PersonnelMapper(new contractor()));
         
         return person;
 
@@ -57,14 +58,16 @@ public class ContractorDAOimpl
     @Override
     public void delete(Long id) {
 
-        // TODO Auto-generated method stub
+        String SQL = "Delete from contractors where ID = ?";
+        jdbcTemplate.update(SQL, id);
 
     }
 
     @Override
     public void update(Long id) {
 
-        // TODO Auto-generated method stub
+        String SQL = "Update from contractors where ID = ?";
+        jdbcTemplate.update(SQL, id);
 
     }
 

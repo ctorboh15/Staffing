@@ -1,6 +1,5 @@
 package com.entities;
 
-import java.sql.Date;
 
 
 // @Entity
@@ -9,6 +8,10 @@ public class employee
     extends personnel {
 
     private boolean isManager;
+
+    public employee() {
+
+    }
 
     public employee(String first, String last, String login, String pass) {
 

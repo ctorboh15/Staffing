@@ -47,5 +47,10 @@
   		<artifactId>spring-jdbc</artifactId>
   		<version>4.1.6.RELEASE</version>
   	</dependency>
+  	<dependency>
+  		<groupId>org.mod4j.org</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>3.8.2</version>
+  	</dependency>
   </dependencies>
 </project>
