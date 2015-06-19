@@ -15,14 +15,18 @@ import com.entities.personnel;
  * @author cemah.tudae-torboh
  *
  */
-public class PersonnelDAOImplementation
+public class PersonnelService
     implements PersonnelDAO {
 
     private DataSource datasource;
 
     private JdbcTemplate jdbcTemp;
 
-    private PersonnelFactory pf;
+    private PersonnelFactory PersonnelFactory;
+    
+    public void setPersonnelFactory(PersonnelFactory personnelFactory){
+    	this.PersonnelFactory = personnelFactory;
+    }
 
     @Override
     public void setDataSource(DataSource ds) {

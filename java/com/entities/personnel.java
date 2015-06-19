@@ -1,6 +1,8 @@
 package com.entities;
 
-import java.sql.Date;
+import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public abstract class personnel
     implements Comparable<personnel> {
@@ -27,11 +29,17 @@ public abstract class personnel
         this.password = password;
         this.firstName = first;
         this.lastName = last;
+        this.startDate = setDate();
+        this.endDate = setDate();
+      
+        this.email = "***@email.com";
     }
 
     public personnel() {
 		
 	}
+    
+    
 
 	@Override
     public int hashCode() throws NullPointerException {
@@ -123,6 +131,20 @@ public abstract class personnel
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public Date setDate(){
+	SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+	String dateInString = "07/06/2013";
+ 
+	try {
+ 
+		Date date = formatter.parse(dateInString);
+		return date;
+ 
+	} catch (ParseException e) {
+		e.printStackTrace();
+	}
+	return null;
 	}
 
 

@@ -7,6 +7,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import com.entities.contractor;
 import com.entities.employee;
 import com.entities.personnel;
+import com.utilities.ContractorMapper;
+import com.utilities.EmployeeMapper;
 import com.utilities.SqlUtility;
 
 /**
@@ -19,7 +21,7 @@ import com.utilities.SqlUtility;
 public class PersonnelFactory {
 
 
-    public static String getSQl(String type) {
+    public String getSQl(String type) {
 
         switch (type) {
             case "Employee":
@@ -31,7 +33,7 @@ public class PersonnelFactory {
 
     }
 
-    public static personnel getWorker(String type, Long id,
+    public personnel getWorker(String type, Long id,
                                       JdbcTemplate jdbcTemplate)
         throws ClassNotFoundException {
 
@@ -54,17 +56,15 @@ public class PersonnelFactory {
 
     }
 
-    public static List<personnel> listWorkers(String type,
+    public List<personnel> listWorkers(String type,
                                               JdbcTemplate jdbcTemplate)
         throws ClassNotFoundException {
 
         switch (type) {
             case "Employee":
-                return jdbcTemplate.query(SqlUtility.getSQL("List_Emp"),
-                    new PersonnelMapper(new employee()));
+                return jdbcTemplate.query(SqlUtility.getSQL("List_Emp"),new EmployeeMapper());
             case "Contractor":
-                return jdbcTemplate.query(SqlUtility.getSQL("List_Emp"),
-                    new PersonnelMapper(new contractor()));
+                return jdbcTemplate.query(SqlUtility.getSQL("List_Con"),new ContractorMapper());
             default:
                 throw new ClassNotFoundException();
 

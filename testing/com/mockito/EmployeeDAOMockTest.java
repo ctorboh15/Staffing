@@ -9,21 +9,21 @@ import java.util.List;
 
 import org.junit.BeforeClass;
 
-import com.dao.PersonnelDAOImplementation;
+import com.dao.PersonnelService;
 import com.entities.contractor;
 import com.entities.employee;
 import com.entities.personnel;
 
 public class EmployeeDAOMockTest {
 
-    private static PersonnelDAOImplementation mockedEmpDao;
+    private static PersonnelService mockedEmpDao;
 
     personnel testEmployee, testEmployee2, testEmployee3;
 
     @BeforeClass
     public void setUp() {
 
-        mockedEmpDao = mock(PersonnelDAOImplementation.class);
+        mockedEmpDao = mock(PersonnelService.class);
 
         testEmployee =
             new employee("CEMAH", "TORBOH", "ctorboh15", "cemah1234");

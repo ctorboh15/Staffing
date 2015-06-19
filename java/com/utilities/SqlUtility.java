@@ -4,14 +4,14 @@ import java.util.HashMap;
 
 public class SqlUtility {
 
-    private static HashMap<String, String> SqlStatements = null;
+    private static HashMap<String, String> SqlStatements = new HashMap<String, String>();
 
     public SqlUtility() {
 
         populateMap();
     }
 
-    private void populateMap() {
+    private static void populateMap() {
 
         // Employee Sql Statements
         SqlStatements
@@ -36,7 +36,9 @@ public class SqlUtility {
 
     public static String getSQL(String statementName)
         throws NullPointerException {
-
+    	if(SqlStatements.isEmpty()){
+    		populateMap();
+    	}
         return SqlStatements.get(statementName);
     }
 }

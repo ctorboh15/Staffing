@@ -1,10 +1,17 @@
 package com.rest.services;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dao.PersonnelService;
 import com.entities.employee;
 import com.entities.personnel;
 
@@ -12,22 +19,26 @@ import com.entities.personnel;
 @RequestMapping("/service/personnel")
 public class personnelWS {
 	
+	/**
+	 * Used Spring for Dependency Injection for my personnel serivce.
+	 */
+	ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+	private PersonnelService personnelService = (PersonnelService) context.getBean("PersonnelService");
 	
-	    @RequestMapping(value = "/get", method=RequestMethod.GET)
-    public personnel getPersonnel(@RequestParam(value = "name") String name) {
-	       return new employee(name,"torboh","2/25/2015");
+	    @RequestMapping(value = "/retrieve", method=RequestMethod.GET)
+    public personnel getPersonnel(@RequestParam(value = "id") Long id, @RequestParam(value="type") String type) {
+	    	
+	      return personnelService.getPersonnel(id, type);
 	    }
 	    
 	    
 
 
-    @RequestMapping(value = "/get/list", method = RequestMethod.GET)
-    public personnel[] listAll() {
+    @RequestMapping(value = "/get/list/{type}", method = RequestMethod.GET)
+    public List<personnel> listAll(@PathVariable String type) {
 
-        personnel[] perArr = new personnel[5];
-        perArr[0] = new employee("Cemah", "torboh", "2/25/2015");
-        perArr[1] = new employee("Joyce", "Tudae", "6/3/1995");
-        return perArr;
+       
+        return personnelService.listAllPersonnel(type);
 
     }
 
