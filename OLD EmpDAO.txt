@@ -1,0 +1,156 @@
+package com.dao;
+
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.entities.employee;
+import com.entities.personnel;
+
+
+public class EmployeeDAOimpl
+    implements PersonnelDAO {
+
+    private DataSource datasource;
+
+    private JdbcTemplate jdbcTemp;
+
+    @Override
+    public void setDataSource(DataSource ds) {
+
+        this.datasource = ds;
+        this.jdbcTemp = new JdbcTemplate(datasource);
+
+    }
+
+    @Override
+    public void createPersonnel(personnel per) {
+
+        String SQL =
+            "Insert into employees (firstName, lastName, login,password) values (?,?,?,?)";
+        jdbcTemp.update(SQL, per.getFirstName(), per.getLastName(),
+            per.getLogin(), per.getPassword());
+
+    }
+
+    @Override
+    public personnel getPersonnel(Long id) {
+
+
+        String SQL = "Select * from employees where ID = ?";
+        employee person =
+            (employee) jdbcTemp.queryForObject(SQL, new Object[] {id},
+                new PersonnelMapper(new employee()));
+
+
+        return person;
+
+    }
+
+    @Override
+    public List<personnel> listAllPersonnel() {
+
+        String SQL = "Select * from employees";
+        List<personnel> contractorsList =
+            jdbcTemp.query(SQL, new PersonnelMapper(new employee()));
+        return contractorsList;
+    }
+
+    @Override
+    public void delete(Long id) {
+
+        String SQL = "Delete from employees where ID = ?";
+        jdbcTemp.update(SQL, id);
+    }
+
+    @Override
+    public void update(personnel per, Long id) {
+
+        String SQL = "Update from employees where ID = ?";
+        jdbcTemp.update(SQL, id);
+
+    }
+
+}
+__________________________________________________________________________________________________________________
+
+
+
+package com.dao;
+
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.entities.contractor;
+import com.entities.personnel;
+
+
+public class ContractorDAOimpl
+    implements PersonnelDAO {
+
+    private DataSource dataSource;
+
+    private JdbcTemplate jdbcTemplate;
+
+    @Override
+    public void setDataSource(DataSource ds) {
+
+        this.dataSource = ds;
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
+
+    }
+
+    @Override
+    public void createPersonnel(personnel per) {
+
+        String SQL =
+            "Insert into contractors (firstName, lastName, login,password) values (?,?,?,?)";
+        jdbcTemplate.update(SQL, per.getFirstName(), per.getLastName(),
+            per.getLogin(), per.getPassword());
+
+    }
+
+    @Override
+    public personnel getPersonnel(Long id) {
+
+        String SQL = "Select * from contractors where ID = ?";
+        contractor person =
+            (contractor) jdbcTemplate.queryForObject(SQL,
+ new Object[] {id},
+                new PersonnelMapper(new contractor()));
+        
+        return person;
+
+    }
+
+    @Override
+    public List<personnel> listAllPersonnel() {
+
+      String SQL = "Select * from contractors";
+      List<personnel> contractorsList = jdbcTemplate.query(SQL, new PersonnelMapper(new contractor()));
+        return contractorsList;
+    }
+
+    @Override
+    public void delete(Long id) {
+
+        String SQL = "Delete from contractors where ID = ?";
+        jdbcTemplate.update(SQL, id);
+
+    }
+
+    @Override
+    public void update(personnel per, Long id) {
+
+        String SQL = "Update from contractors where ID = ?";
+        jdbcTemplate.update(SQL, id);
+
+    }
+
+}
+

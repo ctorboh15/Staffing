@@ -10,14 +10,13 @@ public interface PersonnelDAO {
 
     public void setDataSource(DataSource ds);
 
-    public void createPersonnel(String firstName, String lastName,
-                                String Login, String pw);
+    public void createPersonnel(personnel per, String type);
 
-    public personnel getPersonnel(Long id);
+    public personnel getPersonnel(Long id, String type);
 
-    public List<personnel> listAllPersonnel();
+    public List<personnel> listAllPersonnel(String type);
 
-    public void delete(Long id);
+    public void delete(Long id, String type);
 
-    public void update(Long id);
+    public void update(personnel per, Long id, String type);
 }
