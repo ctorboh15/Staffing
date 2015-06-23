@@ -39,7 +39,7 @@ public class PersonnelService
     @Override
     public void createPersonnel(personnel per, String type) {
 
-        jdbcTemp.update(PersonnelFactory.getSQl(type), per.getFirstName(),
+        jdbcTemp.update(PersonnelFactory.createWorker(type), per.getFirstName(),
             per.getLastName(), per.getLogin(), per.getPassword());
 
     }
@@ -72,8 +72,10 @@ public class PersonnelService
 
     @Override
     public void delete(Long id, String type) {
+    	
 
-        // TODO Auto-generated method stub
+    	jdbcTemp.update(PersonnelFactory.deleteWorker(type), id );
+
 
     }
 
