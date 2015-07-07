@@ -9,7 +9,7 @@ import java.util.List;
 
 import org.junit.BeforeClass;
 
-import com.dao.PersonnelService;
+import com.cemah.dao.PersonnelService;
 import com.entities.contractor;
 import com.entities.employee;
 import com.entities.personnel;

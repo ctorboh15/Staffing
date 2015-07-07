@@ -17,17 +17,17 @@
            <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
       <property name="url" value="jdbc:mysql://localhost:3306/Personnel"/>
       <property name="username" value="root"/>
-      <property name="password" value=""/>
+      <property name="password" value="root"/>
         </bean>
         
    
        <bean id="PersonnelService" 
-      class="com.dao.PersonnelService">
+      class="com.cemah.dao.PersonnelService">
       <property name="dataSource"  ref="dataSource" />    
       <property name="personnelFactory" ref="personnelFactory" />
    </bean>
    
-   <bean id="personnelFactory" class="com.dao.PersonnelFactory">
+   <bean id="personnelFactory" class="com.cemah.dao.PersonnelFactory">
    
    </bean>
    

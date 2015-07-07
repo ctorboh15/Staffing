@@ -1,4 +1,4 @@
-package com.dao;
+package com.cemah.dao;
 
 import java.util.List;
 

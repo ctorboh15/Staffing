@@ -1,4 +1,4 @@
-package com.rest.services;
+package com.cemah.rest.services;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
