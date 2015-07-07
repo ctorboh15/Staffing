@@ -5,6 +5,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 
 import com.entities.personnel;
 
@@ -15,6 +16,7 @@ import com.entities.personnel;
  * @author cemah.tudae-torboh
  *
  */
+@Component
 public class PersonnelService
     implements PersonnelDAO {
 
