@@ -1,9 +1,13 @@
 package com.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-
-// @Entity
-// @Table(name = "Employee")
+@Entity
+ @Table(name = "Employee")
 public class employee
     extends personnel {
 
@@ -21,9 +25,9 @@ public class employee
     
    
 
-    // @Id
-    // @GeneratedValue
-    // @Column(name = "ID")
+    @Id
+     @GeneratedValue
+     @Column(name = "ID")
     @Override
     public Long getId() {
 
@@ -31,7 +35,7 @@ public class employee
 
     }
 
-    // @Column(name = "firstName")
+     @Column(name = "firstName")
     @Override
     public String getFirstName() {
 
@@ -39,7 +43,7 @@ public class employee
         return this.firstName;
     }
 
-    // @Column(name = "lastName")
+     @Column(name = "lastName")
     @Override
     public String getLastName() {
 
@@ -47,7 +51,7 @@ public class employee
         return this.lastName;
     }
 
-    // @Column(name = "startDate")
+     @Column(name = "startDate")
     @Override
     public String getStartDate() {
 
@@ -55,7 +59,7 @@ public class employee
         return this.startDate.toString();
     }
 
-    // @Column(name = "endDate")
+     @Column(name = "endDate")
     @Override
     public String getEndDate() {
 
@@ -63,7 +67,7 @@ public class employee
         return this.endDate.toString();
     }
 
-    // @Column(name = "email")
+     @Column(name = "email")
     @Override
     public String getEmail() {
 
@@ -71,15 +75,15 @@ public class employee
         return this.email;
     }
 
-    // @Column(name = "login")
+     @Column(name = "login")
     @Override
     public String getLogin() {
 
-        // TODO Auto-generated method stub
+        
         return this.login;
     }
 
-    // @Column(name = "password")
+     @Column(name = "password")
     @Override
     public String getPassword() {
 
@@ -87,7 +91,7 @@ public class employee
         return this.password;
     }
 
-    // @Column(name = "isManager")
+     @Column(name = "isManager")
     public void setMangerStatus() {
 
         isManager = true;
@@ -98,5 +102,11 @@ public class employee
         return isManager;
 
     }
+
+	@Override
+	public String getPersonnelType() {
+		// TODO Auto-generated method stub
+		return "Employee";
+	}
 
 }

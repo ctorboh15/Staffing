@@ -76,7 +76,7 @@ public class contractor extends personnel {
     @Override
     public String getLogin() {
 
-        // TODO Auto-generated method stub
+       
         return this.login;
     }
 
@@ -84,7 +84,12 @@ public class contractor extends personnel {
     @Override
     public String getPassword() {
 
-        // TODO Auto-generated method stub
+        
         return this.password;
     }
+	@Override
+	public String getPersonnelType() {
+		
+		return "Contractor";
+	}
 }

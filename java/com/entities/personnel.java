@@ -22,6 +22,8 @@ public abstract class personnel
     protected String login;
 
     protected String password;
+    
+    
 
     public personnel(String first, String last, String login, String password) {
 
@@ -98,6 +100,7 @@ public abstract class personnel
     public abstract String getEmail();
 
     public abstract String getLogin();
+    public abstract String getPersonnelType();
 
     public abstract String getPassword();
 
@@ -146,6 +149,8 @@ public abstract class personnel
 	}
 	return null;
 	}
+	
+	
 
 
 }
