@@ -26,3 +26,5 @@ password NVARCHAR(15) NOT NULL
 Insert into Employees (firstName,lastName,startDate,endDate,email,login,password) values('xxxxxx','xxxxxx','20090815','20180113','xxxxxxx@mail.com','user','pass');
 
 Insert into Contractors (firstName,lastName,startDate,endDate,email,login,password) values('xxxxxx','xxxxxx','20090815','20180113','xxxxx@mail.com','user','pass');
+
+test
