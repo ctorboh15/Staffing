@@ -27,16 +27,44 @@
     </plugins>
   </build>
   <dependencies>
-  	<dependency>
-  		<groupId>org.hibernate</groupId>
-  		<artifactId>hibernate-core</artifactId>
-  		<version>5.0.0.CR1</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>mysql</groupId>
-  		<artifactId>mysql-connector-java</artifactId>
-  		<version>5.1.35</version>
-  	</dependency>
+  
+  <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.0.3.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>4.0.3.RELEASE</version>
+        </dependency>
+         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>4.3.5.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>4.3.5.Final</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.9</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.4</version>
+        </dependency>
+  	
   	<dependency>
   		<groupId>org.springframework.boot</groupId>
   		<artifactId>spring-boot-starter-web</artifactId>
@@ -56,26 +84,6 @@
   		<groupId>org.mockito</groupId>
   		<artifactId>mockito-all</artifactId>
   		<version>2.0.2-beta</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.hibernate</groupId>
-  		<artifactId>hibernate-entitymanager</artifactId>
-  		<version>5.0.0.CR1</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>commons-dbcp</groupId>
-  		<artifactId>commons-dbcp</artifactId>
-  		<version>20030825.184428</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.springframework</groupId>
-  		<artifactId>spring-orm</artifactId>
-  		<version>4.1.7.RELEASE</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.springframework</groupId>
-  		<artifactId>spring-tx</artifactId>
-  		<version>4.1.7.RELEASE</version>
   	</dependency>
   </dependencies>
 </project>

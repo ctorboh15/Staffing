@@ -19,10 +19,10 @@ import com.entities.personnel;
 public class PersonnelController {
 	
 	/**
-	 * Used Spring for Dependency Injection for my personnel serivce.
+	 * Used Spring for Dependency Injection for my personnel service.
 	 */
  
-   ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+   ApplicationContext context = new ClassPathXmlApplicationContext("Spring-All-Modules.xml");
     private PersonnelService personnelService = (PersonnelService)
      context.getBean("PersonnelService");
 	

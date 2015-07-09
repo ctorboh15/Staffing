@@ -27,8 +27,11 @@ public class HibernatePersonnelDAOImpl implements HibernatePersonnelDAO {
 
 	@Override
 	public List<personnel> listPerssonel() {
-		// TODO Auto-generated method stub
-		return null;
+	  Session session = this.sessionFactory.openSession();
+	 List<personnel>personnelList = session.createQuery("from Employee").list(); 
+	 session.close();
+	return personnelList;
+	  
 	}
 
 }

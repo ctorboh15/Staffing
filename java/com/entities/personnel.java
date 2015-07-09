@@ -23,6 +23,8 @@ public abstract class personnel
 
     protected String password;
     
+    protected String Type;
+    
     
 
     public personnel(String first, String last, String login, String password) {
@@ -31,9 +33,6 @@ public abstract class personnel
         this.password = password;
         this.firstName = first;
         this.lastName = last;
-        this.startDate = setDate();
-        this.endDate = setDate();
-      
         this.email = "***@email.com";
     }
 
@@ -88,69 +87,27 @@ public abstract class personnel
     }
 
     public abstract Long getId();
+    public abstract void setId(Long Id);
 
     public abstract String getFirstName();
+    public abstract void setFirstName(String First);
 
     public abstract String getLastName();
+    public abstract void setLastName(String Last);
+    
+    public abstract Date getStartDate();
+    public abstract void setStartDate(Date date);
 
-    public abstract String getStartDate();
-
-    public abstract String getEndDate();
-
+    public abstract Date getEndDate();
+    public abstract void setEndDate(Date date);
+    
     public abstract String getEmail();
-
+    public abstract void setEmail(String Email);
+    
     public abstract String getLogin();
-    public abstract String getPersonnelType();
-
+    public abstract void setLogin(String Login);
+    
     public abstract String getPassword();
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public Date setDate(){
-	SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-	String dateInString = "07/06/2013";
- 
-	try {
- 
-		Date date = formatter.parse(dateInString);
-		return date;
- 
-	} catch (ParseException e) {
-		e.printStackTrace();
-	}
-	return null;
-	}
-	
-	
-
-
+    public abstract void setPassword(String Password);
+    
 }
