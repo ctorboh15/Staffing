@@ -2,7 +2,7 @@ package com.entities;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -102,7 +102,7 @@ public class employee extends personnel {
 	@Override
 	public String getLogin() {
 
-		return this.getLogin();
+		return this.login;
 	}
 
 	@Override
