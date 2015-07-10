@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cemah.dao.PersonnelService;
+import com.cemah.services.HibernatePersonnelService;
+import com.cemah.services.SpringJDBCPersonnelService;
 import com.entities.personnel;
 
 @RestController
@@ -23,8 +24,8 @@ public class PersonnelController {
 	 */
  
    ApplicationContext context = new ClassPathXmlApplicationContext("Spring-All-Modules.xml");
-    private PersonnelService personnelService = (PersonnelService)
-     context.getBean("PersonnelService");
+    private SpringJDBCPersonnelService personnelService = (SpringJDBCPersonnelService)context.getBean("PersonnelService");
+    private HibernatePersonnelService HibPersonnelService = (HibernatePersonnelService)context.getBean("HibernateService");
 	
 	    @RequestMapping(value = "/retrieve", method=RequestMethod.GET)
     public personnel getPersonnel(@RequestParam(value = "id") Long id, @RequestParam(value="type") String type) {
@@ -32,10 +33,15 @@ public class PersonnelController {
 	      return personnelService.getPersonnel(id, type);
 	    }
 	    
-	    
+	    @RequestMapping(value = "/hib", method = RequestMethod.GET)
+	    public List<personnel> listAllHibernate() {
 
+	       
+	        return HibPersonnelService.listPersonnel();
 
-    @RequestMapping(value = "/get/list/{type}", method = RequestMethod.GET)
+	    }
+
+    @RequestMapping(value = "/list/{type}", method = RequestMethod.GET)
     public List<personnel> listAll(@PathVariable String type) {
 
        

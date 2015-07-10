@@ -1,4 +1,4 @@
-package com.cemah.dao;
+package com.cemah.services;
 
 import java.util.List;
 
@@ -7,6 +7,8 @@ import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
+import com.cemah.dao.PersonnelDAO;
+import com.cemah.dao.PersonnelFactory;
 import com.entities.personnel;
 
 /**
@@ -17,7 +19,7 @@ import com.entities.personnel;
  *
  */
 @Component
-public class PersonnelService
+public class SpringJDBCPersonnelService
     implements PersonnelDAO {
 
     private DataSource datasource;

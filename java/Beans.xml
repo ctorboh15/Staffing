@@ -22,7 +22,7 @@
 	</bean>
 
 
-	<bean id="PersonnelService" class="com.cemah.dao.PersonnelService">
+	<bean id="PersonnelService" class="com.cemah.services.SpringJDBCPersonnelService">
 		<property name="dataSource" ref="dataSource" />
 		<property name="PersonnelFactory" ref="personnelFactory" />
 	</bean>
@@ -30,6 +30,8 @@
 	<bean id="personnelFactory" class="com.cemah.dao.PersonnelFactory">
 
 	</bean>
+
+
 
 
 </beans>

@@ -28,7 +28,7 @@ public class HibernatePersonnelDAOImpl implements HibernatePersonnelDAO {
 	@Override
 	public List<personnel> listPerssonel() {
 	  Session session = this.sessionFactory.openSession();
-	 List<personnel>personnelList = session.createQuery("from Employee").list(); 
+	 List<personnel>personnelList = session.createSQLQuery("select * from Employees").list(); 
 	 session.close();
 	return personnelList;
 	  
