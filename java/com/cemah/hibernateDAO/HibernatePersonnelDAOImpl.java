@@ -6,6 +6,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import com.entities.Person;
+import com.entities.contractor;
+import com.entities.employee;
 import com.entities.personnel;
 
 public class HibernatePersonnelDAOImpl implements HibernatePersonnelDAO {
@@ -32,6 +35,21 @@ public class HibernatePersonnelDAOImpl implements HibernatePersonnelDAO {
 	 session.close();
 	return personnelList;
 	  
+	}
+	
+	
+	@Override
+	public personnel retrievePersonnel(Long id) {
+		Session session = this.sessionFactory.openSession();
+		Person person = (Person) session.get(Person.class, id);
+		return null;
+	}
+	
+	
+	public Person retrievePerson(int id) {
+		Session session = this.sessionFactory.openSession();
+		Person person = (Person) session.get(Person.class, id);
+		return person;
 	}
 
 }

@@ -21,6 +21,7 @@
 			<list>
 				<value>com.entities.employee</value>
 				<value>com.entities.contractor</value>
+					<value>com.entities.Person</value>
 			</list>
 		</property>
 

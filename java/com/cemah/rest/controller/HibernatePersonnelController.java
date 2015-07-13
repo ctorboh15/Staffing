@@ -6,9 +6,12 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cemah.services.HibernatePersonnelService;
+import com.entities.Person;
+import com.entities.employee;
 import com.entities.personnel;
 
 @RestController
@@ -25,4 +28,34 @@ public class HibernatePersonnelController {
         return HibPersonnelService.listPersonnel();
 
     }
+    
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    public String createPersonnel(@RequestParam("first") String first, @RequestParam("last") String last,
+    									@RequestParam("login") String login,@RequestParam("pass") String pass){
+    	try{
+    	HibPersonnelService.createPersonnel(new employee(first,last,login,pass));
+    	
+    	return "Personnel Added Successfully";
+    	}catch(Exception e){
+    		e.getMessage();
+    	}
+    	
+    	return "There was an error";
+    }
+    
+    
+    @RequestMapping(value= "/retrieve" , method = RequestMethod.GET)
+    public Person retrievePersonnel(@RequestParam("ID") int id){
+    	try{
+    	Person person = HibPersonnelService.retrievePerson(id);
+    	return person;
+    	}catch(Exception e){
+    		System.out.println(e.getMessage());
+    	}
+    	
+    	return null;
+    }
+    
+    
+    	
 }

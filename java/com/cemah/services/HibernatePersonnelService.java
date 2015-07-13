@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.cemah.hibernateDAO.HibernatePersonnelDAOImpl;
+import com.entities.Person;
 import com.entities.personnel;
 
 public class HibernatePersonnelService {
@@ -24,5 +25,13 @@ public class HibernatePersonnelService {
 
 	public List<personnel> listPersonnel() {
 		return hibernatePersonnelDAOImpl.listPersonnel();
+	}
+	
+	public personnel retrievePersonnel(Long id){
+		return hibernatePersonnelDAOImpl.retrievePersonnel(id);
+	}
+	
+	public Person retrievePerson(int id){
+		return hibernatePersonnelDAOImpl.retrievePerson(id);
 	}
 }

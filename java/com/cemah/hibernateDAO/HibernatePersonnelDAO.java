@@ -7,4 +7,5 @@ import com.entities.personnel;
 public interface HibernatePersonnelDAO {
 	public void savePersonnel(personnel P);
 	public List<personnel> listPersonnel();
+	public personnel retrievePersonnel(Long id);
 }

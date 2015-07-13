@@ -16,7 +16,7 @@ import com.cemah.services.SpringJDBCPersonnelService;
 import com.entities.personnel;
 
 @RestController
-@RequestMapping("/service/personnel")
+@RequestMapping("/spring")
 public class PersonnelController {
 	
 	/**
