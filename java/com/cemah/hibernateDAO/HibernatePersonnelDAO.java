@@ -6,5 +6,5 @@ import com.entities.personnel;
 
 public interface HibernatePersonnelDAO {
 	public void savePersonnel(personnel P);
-	public List<personnel> listPerssonel();
+	public List<personnel> listPersonnel();
 }

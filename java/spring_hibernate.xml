@@ -37,8 +37,8 @@
 	<property name="sessionFactory" ref="sessionFactory"/>	
 	</bean>
 	
-	<bean id="HibernateService" class="com.cemah.services.HibernatePersonnelService" autowire="byType">
-	
+	<bean id="HibernateService" class="com.cemah.services.HibernatePersonnelService">
+	<property name="hibernatePersonnelDAOImpl" ref="hibernateDAO"></property>
 	</bean>
 
 </beans>

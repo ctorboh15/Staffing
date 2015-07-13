@@ -10,17 +10,19 @@ import com.entities.personnel;
 public class HibernatePersonnelService {
 	
 	
-	private HibernatePersonnelDAOImpl HibDAO;
+	private HibernatePersonnelDAOImpl hibernatePersonnelDAOImpl;
 	
-	@Autowired
-	public void setHibernatePersonnelDAOImpl(HibernatePersonnelDAOImpl someDAO){
-		this.HibDAO = someDAO;
+	
+	public void setHibernatePersonnelDAOImpl(HibernatePersonnelDAOImpl hibernatePersonnelDAOImpl){
+		this.hibernatePersonnelDAOImpl = hibernatePersonnelDAOImpl;
 	}
+	
 	public void createPersonnel(personnel Person) {
-		HibDAO.savePersonnel(Person);
+		
+		hibernatePersonnelDAOImpl.savePersonnel(Person);
 	}
 
 	public List<personnel> listPersonnel() {
-		return HibDAO.listPerssonel();
+		return hibernatePersonnelDAOImpl.listPersonnel();
 	}
 }

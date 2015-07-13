@@ -25,21 +25,15 @@ public class PersonnelController {
  
    ApplicationContext context = new ClassPathXmlApplicationContext("Spring-All-Modules.xml");
     private SpringJDBCPersonnelService personnelService = (SpringJDBCPersonnelService)context.getBean("PersonnelService");
-    private HibernatePersonnelService HibPersonnelService = (HibernatePersonnelService)context.getBean("HibernateService");
+  
 	
-	    @RequestMapping(value = "/retrieve", method=RequestMethod.GET)
+	    @RequestMapping(value = "/retrieve", method=RequestMethod.GET)  
     public personnel getPersonnel(@RequestParam(value = "id") Long id, @RequestParam(value="type") String type) {
 	    	
 	      return personnelService.getPersonnel(id, type);
 	    }
 	    
-	    @RequestMapping(value = "/hib", method = RequestMethod.GET)
-	    public List<personnel> listAllHibernate() {
-
-	       
-	        return HibPersonnelService.listPersonnel();
-
-	    }
+	    
 
     @RequestMapping(value = "/list/{type}", method = RequestMethod.GET)
     public List<personnel> listAll(@PathVariable String type) {
