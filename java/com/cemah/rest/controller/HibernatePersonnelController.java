@@ -45,9 +45,9 @@ public class HibernatePersonnelController {
     
     
     @RequestMapping(value= "/retrieve" , method = RequestMethod.GET)
-    public Person retrievePersonnel(@RequestParam("ID") int id){
+    public personnel retrievePersonnel(@RequestParam("ID") Long id){
     	try{
-    	Person person = HibPersonnelService.retrievePerson(id);
+    	personnel person = HibPersonnelService.retrievePersonnel(id);
     	return person;
     	}catch(Exception e){
     		System.out.println(e.getMessage());

@@ -41,15 +41,11 @@ public class HibernatePersonnelDAOImpl implements HibernatePersonnelDAO {
 	@Override
 	public personnel retrievePersonnel(Long id) {
 		Session session = this.sessionFactory.openSession();
-		Person person = (Person) session.get(Person.class, id);
-		return null;
-	}
-	
-	
-	public Person retrievePerson(int id) {
-		Session session = this.sessionFactory.openSession();
-		Person person = (Person) session.get(Person.class, id);
+		personnel person = (personnel) session.createSQLQuery("Select * from Employee where ID = :id").setParameter("id", id);
 		return person;
 	}
+	
+	
+	
 
 }

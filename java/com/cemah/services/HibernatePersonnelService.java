@@ -31,7 +31,4 @@ public class HibernatePersonnelService {
 		return hibernatePersonnelDAOImpl.retrievePersonnel(id);
 	}
 	
-	public Person retrievePerson(int id){
-		return hibernatePersonnelDAOImpl.retrievePerson(id);
-	}
 }
